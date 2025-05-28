@@ -1,3 +1,3 @@
-@Library('my-shared-lib') _
+@Library('my-shared-lib@main') _
 
 namePipeline('Brendan')
