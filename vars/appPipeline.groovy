@@ -4,6 +4,12 @@ def call() {
         agent any
 
         stages {
+
+            stage('Test Docker Installation') {
+                steps {
+                    sh "docker ps"
+                }
+            }
             
             stage('Clean') {
                 steps {
