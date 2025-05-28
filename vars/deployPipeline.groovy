@@ -4,6 +4,15 @@ def call() {
         agent any
 
         stages {
+
+            stage('Test Kubernetes') {
+                steps {
+                    script {
+                        sh "kubectl get pods"
+                    }
+                }
+            }
+            
             stage('Clean Workspace') {
                 steps {
                     script {
