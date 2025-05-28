@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
     res.send('Hello from the Express server!');
 });
 
+app.post('/', (req, res) => {
+    res.json({ message: 'Success' });
+});
+
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
