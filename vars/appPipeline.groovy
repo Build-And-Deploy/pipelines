@@ -1,7 +1,11 @@
 
 def call() {
     pipeline {
-        agent any
+        agent {
+            docker {
+                image 'node:20-alpine'
+            }
+        }
 
         stages {
 
@@ -31,7 +35,8 @@ def call() {
 
             stage('Run') {
                 steps {
-                    sh "npm start"
+                    sh "nohup node server.js &"
+                    sleep 5
                 }
             }
 
